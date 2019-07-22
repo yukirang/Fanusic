@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://yuki:yuki123@cluster0-3dxuw.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret",
+  "client_id": "4cbada4334dd4f7a94836207fc28830b",
+  "client_secret": "b023ec0c69e140b0b1234eb814c2c409"
+}
