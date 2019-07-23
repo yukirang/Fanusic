@@ -34,7 +34,7 @@ const DashboardArtists = ({
             </li>
           ))}
         </ul>
-        <h4 className='lead recommends-title'>What to listen...</h4>
+        <h4 className='lead recommends-title'>Recommended for you...</h4>
         <div className='recommends'>
           {recommends.map((item, index) => (
             <RecommendItem key={index} album={item.album} />
