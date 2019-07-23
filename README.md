@@ -11,6 +11,7 @@ Users are able to
 - write posts
 - like/dislike a post
 - add comments
-  and so on...
+
+and so on...
 
 Hope you enjoy!
