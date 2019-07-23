@@ -4,7 +4,7 @@ This is a MERN statck based Social platform for fans and music lovers. Integrate
 
 Users are able to
 
-- costomize profile
+- costomize their profiles
 - add their favorite artists
 - explore and connect to other music lovers
 - get their personalized album recommendations(with profile created)
