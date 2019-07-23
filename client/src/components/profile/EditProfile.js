@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { addProfile, getCurrentProfile } from '../../actions/profile';
 
 const EditProfile = ({
@@ -32,14 +32,7 @@ const EditProfile = ({
       youtube: loading || !profile.social ? '' : profile.social.youtube,
       instagram: loading || !profile.social ? '' : profile.social.instagram
     });
-  }, [
-    getCurrentProfile,
-    loading,
-    profile.location,
-    profile.artists,
-    profile.bio,
-    profile.social
-  ]);
+  }, [getCurrentProfile, loading]);
 
   const {
     location,
@@ -72,7 +65,7 @@ const EditProfile = ({
             type='text'
             placeholder='Location'
             name='location'
-            value={location || ''}
+            value={location}
             onChange={e => onChange(e)}
           />
         </div>
@@ -92,7 +85,7 @@ const EditProfile = ({
             type='text'
             placeholder='Favorite artists, split with ","'
             name='artists'
-            value={artists || ''}
+            value={artists}
             onChange={e => onChange(e)}
           />
         </div>
@@ -103,7 +96,7 @@ const EditProfile = ({
             type='text'
             placeholder='Twitter URL'
             name='twitter'
-            value={twitter || ''}
+            value={twitter}
             onChange={e => onChange(e)}
           />
         </div>
@@ -114,7 +107,7 @@ const EditProfile = ({
             type='text'
             placeholder='Facebook URL'
             name='facebook'
-            value={facebook || ''}
+            value={facebook}
             onChange={e => onChange(e)}
           />
         </div>
@@ -125,7 +118,7 @@ const EditProfile = ({
             type='text'
             placeholder='YouTube URL'
             name='youtube'
-            value={youtube || ''}
+            value={youtube}
             onChange={e => onChange(e)}
           />
         </div>
@@ -136,14 +129,11 @@ const EditProfile = ({
             type='text'
             placeholder='Instagram URL'
             name='instagram'
-            value={instagram || ''}
+            value={instagram}
             onChange={e => onChange(e)}
           />
         </div>
         <input type='submit' className='btn btn-primary' />
-        <Link to='/dashboard' className='btn btn-light'>
-          Go Back
-        </Link>
       </form>
     </Fragment>
   );

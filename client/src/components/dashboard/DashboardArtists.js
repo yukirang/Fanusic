@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import RecommendItem from './RecommendItem';
+import { getArtists } from '../../actions/artists';
 
 const DashboardArtists = ({
   artist: { artists, loading },
-  profile: { profile }
+  profile: { profile },
+  getArtists
 }) => {
+  useEffect(() => {
+    getArtists(profile.artists);
+  }, [getArtists, profile.artists]);
   if (loading || !artists) return <h1>Loading...</h1>;
   else if (profile.artists) {
     const { urls, recommends } = artists;
@@ -16,7 +21,7 @@ const DashboardArtists = ({
         <h4 className='lead'>My favorite Artists</h4>
         <ul>
           {names.map((name, index) => (
-            <li key={index} className='artist'>
+            <li key='index' className='artist'>
               <a
                 href={urls[index].spotify}
                 target='_blank'
@@ -41,10 +46,8 @@ const DashboardArtists = ({
     return <h1>Loading...</h1>;
   }
 };
-
 DashboardArtists.propTypes = {
-  profile: PropTypes.object.isRequired,
-  artists: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -54,5 +57,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  null
+  { getArtists }
 )(DashboardArtists);

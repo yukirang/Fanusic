@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { setAlert } from './alert';
-import { getArtists } from './artists';
 import {
   GET_PROFILE,
   GET_PROFILES,
@@ -17,7 +16,6 @@ export const getCurrentProfile = () => async dispatch => {
       type: GET_PROFILE,
       payload: res.data
     });
-    dispatch(getArtists(res.data.artists));
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
@@ -79,7 +77,6 @@ export const addProfile = (
       type: GET_PROFILE,
       payload: res.data
     });
-    dispatch(getArtists(res.data.artists));
     dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
 
     if (!edit) {
