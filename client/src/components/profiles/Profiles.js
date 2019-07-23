@@ -23,7 +23,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
                 <ProfileItem key={index} profile={profile} />
               ))
             ) : (
-              <h4>No profiles found...Try Again...</h4>
+              <h4> </h4>
             )}
           </div>
         </Fragment>
