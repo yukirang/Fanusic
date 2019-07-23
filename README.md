@@ -1,6 +1,8 @@
 # Fanusic
 
-This is a MERN statck based Social platform for fans and music lovers. Integrated with the Spotify Web APIs
+This is a MERN statck based Social platform for fans and music lovers. Integrated with the [Spotify Web APIs](https://developer.spotify.com/documentation/web-api/)
+
+## description
 
 Users are able to
 
@@ -13,5 +15,48 @@ Users are able to
 - add comments
 
 and so on...
+
+## config
+
+To run it locally, you need to
+
+- get a [Spotify Client Id](https://developer.spotify.com/dashboard/)
+- create a default.json file under the config folder:
+
+```
+{
+  "mongoURI": "YOUR_MONGODB_CONNECTION",
+  "jwtSecret": "SOME_SECRET",
+  "client_id": "YOUR_SPOTIFY_CLIENT_ID",
+  "client_secret": "YOUR_SPOTIFY_CLIENT_SECRET"
+}
+```
+
+## build
+
+```
+cd client
+npm run build
+```
+
+## run
+
+```
+#Install server dependencies
+npm install
+
+#Install client dependencies
+npm run client-install
+
+#Run the server
+npm run server
+
+#Run the client
+npm run client
+```
+
+## demo
+
+You can try it [here](https://fanusic.herokuapp.com/).
 
 Hope you enjoy!
