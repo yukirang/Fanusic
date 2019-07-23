@@ -14,7 +14,7 @@ const DashboardArtists = ({
     getArtists(profile.artists);
   }, [getArtists]);
   if (loading || !artists) return <h1>Loading...</h1>;
-  else {
+  else if (profile.artists) {
     const { urls, recommends } = artists;
     const names = profile.artists;
     return (
@@ -42,6 +42,8 @@ const DashboardArtists = ({
         </div>
       </div>
     );
+  } else {
+    return <h1>Loading...</h1>;
   }
 };
 
