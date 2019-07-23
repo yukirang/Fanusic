@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 const RecommendItem = ({ album }) => {
   return (
     <div className='recommend'>
-      <a href={album.external_urls.spotify} target='_blank'>
+      <a
+        href={album.external_urls.spotify}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
         <img src={album.images[0].url} alt='' className='round-img' />
       </a>
       <div>

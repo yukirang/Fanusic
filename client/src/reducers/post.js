@@ -6,10 +6,8 @@ import {
   DELETE_POST,
   ADD_POST,
   ADD_COMMENT,
-  DELETE_COMMENT,
-  REMOVE_ALERT
+  DELETE_COMMENT
 } from '../actions/type';
-import { stat } from 'fs';
 
 const initialState = {
   posts: [],

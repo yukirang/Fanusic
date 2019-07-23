@@ -41,6 +41,17 @@ const AddProfile = ({ addProfile, history }) => {
       <small>* = required field</small>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
+          Location
+          <input
+            type='text'
+            placeholder='Favorite artists, split with ","'
+            name='artists'
+            value={location}
+            onChange={e => onChange(e)}
+          />
+        </div>
+
+        <div className='form-group'>
           Introduction
           <textarea
             placeholder='Introduce yourself...'

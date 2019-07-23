@@ -11,7 +11,6 @@ import {
 } from './type';
 import setAuthToken from '../utils/setAuthToken';
 import { setAlert } from './alert';
-import { getProfileArtists } from './profile';
 
 // Load User
 export const loadUser = () => async dispatch => {

@@ -32,7 +32,14 @@ const EditProfile = ({
       youtube: loading || !profile.social ? '' : profile.social.youtube,
       instagram: loading || !profile.social ? '' : profile.social.instagram
     });
-  }, [loading, getCurrentProfile]);
+  }, [
+    getCurrentProfile,
+    loading,
+    profile.location,
+    profile.artists,
+    profile.bio,
+    profile.social
+  ]);
 
   const {
     location,
@@ -65,7 +72,7 @@ const EditProfile = ({
             type='text'
             placeholder='Location'
             name='location'
-            value={location}
+            value={location || ''}
             onChange={e => onChange(e)}
           />
         </div>
@@ -85,7 +92,7 @@ const EditProfile = ({
             type='text'
             placeholder='Favorite artists, split with ","'
             name='artists'
-            value={artists}
+            value={artists || ''}
             onChange={e => onChange(e)}
           />
         </div>
@@ -96,7 +103,7 @@ const EditProfile = ({
             type='text'
             placeholder='Twitter URL'
             name='twitter'
-            value={twitter}
+            value={twitter || ''}
             onChange={e => onChange(e)}
           />
         </div>
@@ -107,7 +114,7 @@ const EditProfile = ({
             type='text'
             placeholder='Facebook URL'
             name='facebook'
-            value={facebook}
+            value={facebook || ''}
             onChange={e => onChange(e)}
           />
         </div>
@@ -118,7 +125,7 @@ const EditProfile = ({
             type='text'
             placeholder='YouTube URL'
             name='youtube'
-            value={youtube}
+            value={youtube || ''}
             onChange={e => onChange(e)}
           />
         </div>
@@ -129,7 +136,7 @@ const EditProfile = ({
             type='text'
             placeholder='Instagram URL'
             name='instagram'
-            value={instagram}
+            value={instagram || ''}
             onChange={e => onChange(e)}
           />
         </div>
