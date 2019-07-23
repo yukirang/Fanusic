@@ -13,7 +13,7 @@ const DashboardArtists = ({
   useEffect(() => {
     getArtists(profile.artists);
   }, [getArtists]);
-  if (loading || artists === null) return <h1>Loading...</h1>;
+  if (loading || !artists) return <h1>Loading...</h1>;
   else {
     const { urls, recommends } = artists;
     const names = profile.artists;
