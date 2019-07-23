@@ -18,10 +18,8 @@ const ProfileDetail = ({
 
   return (
     <Fragment>
-      {loading ? (
+      {loading || !profile ? (
         <h1>Loading...</h1>
-      ) : !profile ? (
-        <h1>Profile not found.</h1>
       ) : (
         <Fragment>
           <Link to='/profiles' className='btn btn-primary btn-back'>
