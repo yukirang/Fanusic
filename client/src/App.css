@@ -504,9 +504,9 @@ button {
     line-height: 1.2;
     text-align: center;
   }
-  .profiles .btn {
+  /* .profiles .btn {
     width: 100%;
-  }
+  } */
   .profile-details {
     display: flex;
     align-items: space-between;
