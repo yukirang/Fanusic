@@ -2,6 +2,10 @@
 
 This is a MERN statck based social platform for fans and music lovers. Integrated with the [Spotify Web API](https://developer.spotify.com/documentation/web-api/).
 
+## demo
+
+You can try it [here](https://fanusic.herokuapp.com/).
+
 ## description
 
 Users are able to
@@ -15,6 +19,7 @@ Users are able to
 - add comments
 
 and so on...
+
 
 ## config
 
@@ -54,9 +59,5 @@ npm run server
 #Run the client
 npm run client
 ```
-
-## demo
-
-You can try it [here](https://fanusic.herokuapp.com/).
 
 Hope you enjoy!
