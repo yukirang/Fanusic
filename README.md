@@ -1,6 +1,6 @@
 # Fanusic
 
-This is a MERN statck based social platform for fans and music lovers. Integrated with the [Spotify Web API](https://developer.spotify.com/documentation/web-api/).
+This is a MERN stack based social platform for fans and music lovers. Integrated with the [Spotify Web API](https://developer.spotify.com/documentation/web-api/).
 
 ## demo
 
