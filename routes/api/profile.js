@@ -181,7 +181,7 @@ router.get('/artists', async (req, res) => {
       }
     });
     // .then(function(response) {
-    //   console.log(response.data.access_token);
+
     const bearer = cred.data.access_token;
 
     console.log(`Bearer ${bearer}`);
@@ -201,6 +201,7 @@ router.get('/artists', async (req, res) => {
     });
     try {
       const res_artists = await axios.all(axiosArray);
+
       res_artists.forEach(res_artist => {
         ext_urls.push(res_artist.data.artists.items[0].external_urls);
         spotify_ids.push(res_artist.data.artists.items[0].id);
@@ -210,6 +211,7 @@ router.get('/artists', async (req, res) => {
 
       const rand_id =
         spotify_ids[Math.floor(Math.random() * spotify_ids.length)];
+      console.log(rand_id);
       try {
         const option = {
           method: 'GET',
@@ -221,8 +223,10 @@ router.get('/artists', async (req, res) => {
           }
         };
         const res_albums = await axios(option);
+        console.log('res:' + res_albums.data.tracks.length);
         res.json({ urls: ext_urls, recommends: res_albums.data.tracks });
       } catch (err) {
+        console.log(err);
         console.error(err.message);
         res.status(500).send('Server Error');
       }
